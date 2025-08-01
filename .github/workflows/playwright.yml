@@ -37,19 +37,3 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report/
-
-      - name: 📧 Send success email
-        if: success()
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 587
-          username: ${{ secrets.EMAIL_USERNAME }}
-          password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "✅ Playwright Test Succeeded"
-          to: youremail@example.com
-          from: GitHub Actions <youremail@example.com>
-          body: |
-            ✅ Playwright test 'Hello.spec.ts' has completed successfully on branch ${{ github.ref }}.
-            🕒 Run ID: ${{ github.run_id }}
-            📅 Date: ${{ github.event.head_commit.timestamp }}
