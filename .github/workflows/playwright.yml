@@ -2,9 +2,9 @@ name: Run Specific Playwright Test
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
 
 jobs:
   run-hello-spec:
